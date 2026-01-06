@@ -1,7 +1,7 @@
 package fansirsqi.xposed.sesame.model
 
 import fansirsqi.xposed.sesame.BuildConfig
-import ansirsqi.xposed.sesame.hook.CaptchaHook.updateHooks
+import fansirsqi.xposed.sesame.hook.CaptchaHook.updateHooks
 import fansirsqi.xposed.sesame.model.modelFieldExt.BooleanModelField
 import fansirsqi.xposed.sesame.model.modelFieldExt.ChoiceModelField
 import fansirsqi.xposed.sesame.model.modelFieldExt.IntegerModelField
