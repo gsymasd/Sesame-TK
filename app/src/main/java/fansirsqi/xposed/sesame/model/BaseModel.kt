@@ -1,6 +1,7 @@
 package fansirsqi.xposed.sesame.model
 
 import fansirsqi.xposed.sesame.BuildConfig
+​import​ ​fansirsqi.xposed.sesame.hook.CaptchaHook.updateHooks
 import fansirsqi.xposed.sesame.model.modelFieldExt.BooleanModelField
 import fansirsqi.xposed.sesame.model.modelFieldExt.ChoiceModelField
 import fansirsqi.xposed.sesame.model.modelFieldExt.IntegerModelField
@@ -179,6 +180,7 @@ class BaseModel : Model() {
          */
         @Getter
         val batteryPerm: BooleanModelField = BooleanModelField("batteryPerm", "为支付宝申请后台运行权限", true)
+​ ​       val enableCaptchaUIHook: BooleanModelField = BooleanModelField("enableCaptchaUIHook", "🛡️拒绝访问VPN弹窗拦截", false)
 
 
         /**
