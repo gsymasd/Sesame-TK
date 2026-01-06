@@ -1,7 +1,7 @@
 package fansirsqi.xposed.sesame.model
 
 import fansirsqi.xposed.sesame.BuildConfig
-​import​ ​fansirsqi.xposed.sesame.hook.CaptchaHook.updateHooks
+import ansirsqi.xposed.sesame.hook.CaptchaHook.updateHooks
 import fansirsqi.xposed.sesame.model.modelFieldExt.BooleanModelField
 import fansirsqi.xposed.sesame.model.modelFieldExt.ChoiceModelField
 import fansirsqi.xposed.sesame.model.modelFieldExt.IntegerModelField
@@ -39,8 +39,6 @@ class BaseModel : Model() {
         modelFields.addField(stayAwake) //是否保持唤醒状态
         modelFields.addField(manualTriggerAutoSchedule) //手动触发是否自动安排下次执行
         modelFields.addField(checkInterval) //执行间隔时间
-
-modelFields.addField(enableCaptchaUIHook) //验证码UI层拦截
         modelFields.addField(taskExecutionRounds) //轮数
         modelFields.addField(modelSleepTime) //模块休眠时间范围
         modelFields.addField(execAtTimeList) //定时执行的时间点列表
@@ -60,6 +58,7 @@ modelFields.addField(enableCaptchaUIHook) //验证码UI层拦截
         }
 
         modelFields.addField(batteryPerm) //是否申请支付宝的后台运行权限
+        modelFields.addField(enableCaptchaUIHook) //验证码UI层拦截
         modelFields.addField(recordLog) //是否记录record日志
         modelFields.addField(runtimeLog) //是否记录runtime日志
         modelFields.addField(showToast) //是否显示气泡提示
@@ -182,7 +181,7 @@ modelFields.addField(enableCaptchaUIHook) //验证码UI层拦截
          */
         @Getter
         val batteryPerm: BooleanModelField = BooleanModelField("batteryPerm", "为支付宝申请后台运行权限", true)
-​ ​       val enableCaptchaUIHook: BooleanModelField = BooleanModelField("enableCaptchaUIHook", "🛡️拒绝访问VPN弹窗拦截", false)
+        val enableCaptchaUIHook: BooleanModelField = BooleanModelField("enableCaptchaUIHook", "🛡️拒绝访问VPN弹窗拦截", false)
 
 
         /**
