@@ -39,6 +39,8 @@ class BaseModel : Model() {
         modelFields.addField(stayAwake) //是否保持唤醒状态
         modelFields.addField(manualTriggerAutoSchedule) //手动触发是否自动安排下次执行
         modelFields.addField(checkInterval) //执行间隔时间
+
+modelFields.addField(enableCaptchaUIHook) //验证码UI层拦截
         modelFields.addField(taskExecutionRounds) //轮数
         modelFields.addField(modelSleepTime) //模块休眠时间范围
         modelFields.addField(execAtTimeList) //定时执行的时间点列表
