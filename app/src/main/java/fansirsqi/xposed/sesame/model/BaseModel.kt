@@ -29,6 +29,14 @@ class BaseModel : Model() {
     override fun getIcon(): String {
         return "BaseModel.png"
     }
+    
+    override fun boot(classLoader: ClassLoader?) {
+        // 配置已加载，更新验证码Hook状态
+        try {
+@@ -45,7 +44,7 @@ class BaseModel : Model() {
+            Log.printStackTrace(TAG, "❌ 验证码Hook配置同步失败", t)
+        }
+    }
 
     override fun getEnableFieldName(): String {
         return "启用模块"
@@ -181,6 +189,11 @@ class BaseModel : Model() {
          */
         @Getter
         val batteryPerm: BooleanModelField = BooleanModelField("batteryPerm", "为支付宝申请后台运行权限", true)
+        
+        /**
+         * 验证码UI层拦截（阻止对话框显示）
+         */
+        @Getter
         val enableCaptchaUIHook: BooleanModelField = BooleanModelField("enableCaptchaUIHook", "🛡️拒绝访问VPN弹窗拦截", false)
 
 
