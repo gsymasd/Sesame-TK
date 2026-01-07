@@ -32,9 +32,12 @@ class BaseModel : Model() {
     override fun boot(classLoader: ClassLoader?) {
         // 配置已加载，更新验证码Hook状态
         try {
-@@ -45,7 +44,7 @@ class BaseModel : Model() {
+            updateHooks(
+                enableCaptchaUIHook.value
+            )
+            Log.record(TAG, "✅ 验证码Hook配置已同步")
+        } catch (t: Throwable) {
             Log.printStackTrace(TAG, "❌ 验证码Hook配置同步失败", t)
-            }
         }
     }
 
