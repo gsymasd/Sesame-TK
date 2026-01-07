@@ -216,7 +216,7 @@ class BaseModel : Model() {
         val showToast: BooleanModelField = BooleanModelField("showToast", "气泡提示", true)
 
         @Getter
-        val toastPerfix: StringModelField = StringModelField("toastPerfix", "气泡前缀", null)
+        val toastPrefix: StringModelField = StringModelField("toastPrefix", "气泡前缀", null)
 
         /**
          * 气泡提示的纵向偏移量
