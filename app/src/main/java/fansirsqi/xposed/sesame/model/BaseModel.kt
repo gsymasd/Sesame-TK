@@ -35,7 +35,6 @@ class BaseModel : Model() {
         try {
 @@ -45,7 +44,7 @@ class BaseModel : Model() {
             Log.printStackTrace(TAG, "❌ 验证码Hook配置同步失败", t)
-        }
     }
 
     override fun getEnableFieldName(): String {
