@@ -171,9 +171,7 @@ jobs:
             # 写入 PR 标题
             echo -e "<b>PR:</b> <a href=\"$PR_URL\">$PR_TITLE</a>\n\n<b>Commits:</b>" > "$MESSAGE_FILE"
 
-            COMMITS_JSON=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-                                -H "Accept: application/vnd.github.v3+json" \
-                                "$API_URL")
+            COMMITS_JSON=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github.v3+json" "$API_URL")
 
             # 【修复】使用正确的 jq 语法截取 commit SHA 前7个字符
             echo "$COMMITS_JSON" | jq -r 'if type == "array" then .[] | "• \(.commit.message | split("\n")[0]) (<a href=\"\(.html_url)\">\(.sha[0:7])</a>)" else "" end' >> "$MESSAGE_FILE"
